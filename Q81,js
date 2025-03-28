@@ -1,0 +1,3 @@
+var customCall = function(fn, context, ...args) {
+    return fn.apply(context, args);
+};
