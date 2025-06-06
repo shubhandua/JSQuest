@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Progress Bar Update</title>
+  <style>
+    #progressContainer {
+      width: 100%;
+      background-color: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 30px;
+      margin-top: 20px;
+    }
+
+    #progressBar {
+      height: 100%;
+      width: 0%;
+      background-color: #4caf50;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+      transition: width 0.3s;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Progress Bar Example</h2>
+
+<div id="progressContainer">
+  <div id="progressBar">0%</div>
+</div>
+
+<button onclick="updateProgress()">Update Progress</button>
+
+<script>
+  let progress = 0;
+
+  function updateProgress() {
+    if (progress < 100) {
+      progress += 10;
+      document.getElementById("progressBar").style.width = progress + "%";
+      document.getElementById("progressBar").textContent = progress + "%";
+    } else {
+      alert("Task Completed!");
+    }
+  }
+</script>
+
+</body>
+</html>
